@@ -1,0 +1,74 @@
+body {
+    font-family: 'Inter', sans-serif;
+    margin-top: 3em;
+    margin-bottom: 5em;
+}
+
+input[type="text"] {
+    margin-left: 0.75em;
+    margin-right: 0.75em;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+button:disabled, button:disabled:hover {
+    color: gray;
+    border: 1px solid #bbb;
+}
+
+a, a:visited, a:hover, a:active {
+    color: black;
+}
+
+.fakeBtn { /* from skeleton.css */
+    display: inline-block;
+    height: 38px;
+    padding: 0 30px;
+    text-align: center;
+    font-weight: 400;
+    line-height: 38px;
+    letter-spacing: .1rem;
+    text-decoration: none;
+    white-space: nowrap;
+    background-color: transparent;
+    border-radius: 4px;
+    border: 1px solid #bbb;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+.fakeBtn:hover {
+    color: #333;
+    border-color: #888;
+    outline: 0;
+}
+
+.container {
+    max-width: 500px;
+}
+
+.row {
+    margin-bottom: 1.2em;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.center {
+    text-align: center;
+}
+
+.options {
+    margin-left: 2em;
+}
+
+.option {
+    margin-top: 0.4em;
+}
+
+#footer {
+    margin-top: 3em;
+}

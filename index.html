@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Folio Booklet Generator</title>
+    <meta name="description" content="Generate booklets from PDF for printing and bookbinding">
+    <meta name="author" content="Matt Braddock">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter&display=swap">
+
+    <link rel="stylesheet" type="text/css" href="./lib/microtip.css">
+    <link rel="stylesheet" type="text/css" href="./lib/skeleton.css">
+    <link rel="stylesheet" type="text/css" href="./lib/normalize.css">
+    <link rel="stylesheet" type="text/css" href="./src/index.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="center">Folio</h1>
+        <h6 class="center">Convert a PDF document into a booklet for printing</h6>
+        <div class="row">
+            <label class="fakeBtn">
+                <input id="upload" type="file" accept=".pdf" />
+                Upload PDF
+            </label>
+            &nbsp;
+            <span id="file-name"></span>
+        </div>
+        <div class="row">
+            <span aria-label='Separate ranges by commas, and use "end" for the last page' data-microtip-position="right" role="tooltip">
+                <span class="bold">Page range:</span>
+                <input type="text" id="page-range" size="12" value="1-end"/>
+            </span>
+        </div>
+        <div class="row">
+            <span aria-label='Physical sheets of paper in a signature; use "all" for a single signature' data-microtip-position="right" role="tooltip">
+                <span class="bold">Sheets per signature:</span>
+                <input type="text" id="signature-count" size="4" value="all"/>
+            </span>
+        </div>
+        <div class="row">
+            <span class="bold">Other Options:</span><br/>
+            <div class="options">
+                <!--<div class="option">
+                    <input type="checkbox" id="page-numbers"/> Add page numbers
+                </div>
+                <div class="option">
+                    <span aria-label='Only enter a single range, and use "end" for the last page' data-microtip-position="left" role="tooltip">
+                        Range:<input type="text" id="page-number-range" size="6" value="1-end" disabled/>
+                    </span>
+                    Initial page number:<input type="text" id="page-number-start" size="1" value="1" disabled/>
+                </div>-->
+                <div class="option">
+                    <span aria-label="Adds blank pages as necessary" data-microtip-position="right" role="tooltip">
+                        <input type="checkbox" id="force-last-page"/> Force last page to the end of booklet
+                    </span>
+                </div>
+                <div class="option">
+                    <span aria-label="Allows for long-edge duplex printing" data-microtip-position="right" role="tooltip">
+                        <input type="checkbox" id="portrait-output"/> Keep output in portrait orientation
+                    </span>
+                </div>
+                <div class="option">
+                    <span aria-label="Downloads a .zip file containing the .pdf files" data-microtip-position="right" role="tooltip">
+                        <input type="checkbox" id="zip-download"/> Generate separate files for each signature
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <button id="generate" disabled>Generate Booklet</button>
+        </div>
+        <div id="footer" class="row center">
+            <a href="https://github.com/slashinfty/folio">Source Code</a> | <a href="https://github.com/slashinfty/folio/issues">Report an Issue</a>
+        </div>
+    </div>
+    
+
+    <script src="./lib/coherentpdf.browser.min.js"></script>
+    <script src="./lib/FileSaver.min.js"></script>
+    <script src="./lib/jszip.min.js"></script>
+    <script src="./src/index.js"></script>
+</body>
+</html>
